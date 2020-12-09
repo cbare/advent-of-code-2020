@@ -19,7 +19,7 @@ def interpret(code):
     while i < len(code):
         op, arg = parse(code[i])
         if i in seen:
-            return acc
+            raise RuntimeError(f'Infinite loop: acc={acc}')
         seen.add(i)
         if op == 'acc':
             acc += arg
@@ -30,3 +30,19 @@ def interpret(code):
             i += 1
         else:
             raise RuntimeError(f'Unknown op {op}')
+    return acc
+
+def alter(code, i, new_instr):
+    return [new_instr if i==j else line for j,line in enumerate(code)]
+
+def try_altered_codes(code):
+    for i, line in enumerate(code):
+        op, arg = parse(line)
+        if op in ['jmp', 'nop']:
+            new_op = 'jmp' if op == 'nop' else 'nop'
+            altered_code = alter(code, i, f'{new_op} {arg:+}')
+            try:
+                acc = interpret(altered_code)
+                print(f'altered line {i}, program terminated: acc={acc}')
+            except RuntimeError:
+                print(f'altered line {i}, program looped')
