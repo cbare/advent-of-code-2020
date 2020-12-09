@@ -9,7 +9,7 @@ def to_dict(txt):
         [pair.split(':') for pair in re.split(r'\s+', txt.strip())]
     }
 
-with open('puzzle-4-input.txt') as f:
+with open('puzzle-04-input.txt') as f:
     pps = [to_dict(pp) for pp in f.read().split('\n\n')]
 
 fields = {

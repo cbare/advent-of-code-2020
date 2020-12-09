@@ -2,7 +2,7 @@
 Advent of Code 2020 - Day 1
 """
 
-with open('puzzle-1-input.txt') as f:
+with open('puzzle-01-input.txt') as f:
     xs = [int(a) for a in f]
 
 for i,x in enumerate(xs):

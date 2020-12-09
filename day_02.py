@@ -25,7 +25,7 @@ def is_valid_new(rule, pw):
     return (rule.min-1 < len(pw) and pw[rule.min-1]==rule.char) ^ \
            (rule.max-1 < len(pw) and pw[rule.max-1]==rule.char)
 
-with open('puzzle-2-input.txt') as f:
+with open('puzzle-02-input.txt') as f:
     pws = [make_rule_pw_pair(line) for line in f]
 
 sum(is_valid_new(rule, pw) for rule, pw in pws)

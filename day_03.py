@@ -2,7 +2,7 @@
 Advent of Code 2020 - Day 3
 """
 
-with open('puzzle-3-input.txt') as f:
+with open('puzzle-03-input.txt') as f:
     lines = [l.strip() for l in f.readlines()]
 
 count = 0

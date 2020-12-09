@@ -2,7 +2,7 @@
 Advent of Code 2020 - Day 4
 """
 
-with open('puzzle-5-input.txt') as f:
+with open('puzzle-05-input.txt') as f:
     bps = [l.strip() for l in f]
 
 
