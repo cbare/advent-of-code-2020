@@ -1,5 +1,5 @@
 """
-Advent of Code 2020 - Day 10
+Advent of Code 2020 - Day 11
 """
 
 ex = """L.LL.LL.LL
